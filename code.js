@@ -1,14 +1,11 @@
-let redEl = document.querySelector(".red")
-let yellowEl = document.querySelector(".yellow")
-let greenEl = document.querySelector(".green")
-
-let lightEls = [redEl, yellowEl, greenEl]
+let trafficlightEl = document.querySelectorAll(".traffic")
 let currentlight = 0
 
 function removelights() {
-    redEl.classList.remove("active")
-    yellowEl.classList.remove("active")
-    greenEl.classList.remove("active")
+    for (let i = 0; i < trafficlightEl.length; i++) {
+        
+        trafficlightEl[i].classList.remove("active")
+    }
 }
 
 function updatecolor() {
@@ -17,6 +14,6 @@ function updatecolor() {
     if (currentlight > 2) {
         currentlight = 0
     }
+trafficlightEl[currentlight].classList.add("active")
 
-    lightEls[currentlight].classList.add("active")
-}
+} 
